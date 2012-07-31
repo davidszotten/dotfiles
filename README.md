@@ -1,6 +1,6 @@
 # Install
 
-    git clone ssh://leftmoose.com:443/home/david/repos/vim.git .vim
+    git clone git@github.com:davidszotten/dotvim.git .vim
 
     ./install
 

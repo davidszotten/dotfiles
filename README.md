@@ -1,8 +1,8 @@
 # Install
 
-    git clone git@github.com:davidszotten/dotvim.git .vim
+    git clone git@github.com:davidszotten/dotvim.git ~/.vim
 
-    ./install
+    ~/.vim/install
 
 # Add new bundle
 

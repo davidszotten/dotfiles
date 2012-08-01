@@ -8,8 +8,10 @@ pushd ~/.vim/bundle/command-t
 rake make
 popd
 
-mv ~/.vimrc ~/.vimrc.bak
-mv ~/.gimrc ~/.vimrc.bak
+# move any existing files
+TIMESTAMP=$(date +'%Y-%m-%d_%H:%M:%S')
+ls ~/.vimrc && mv ~/.vimrc ~/.vimrc.bak$TIMESTAMP
+ls ~/.gvimrc && mv ~/.gvimrc ~/.gvimrc.bak$TIMESTAMP
 
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/gvimrc ~/.gvimrc

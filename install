@@ -4,15 +4,22 @@ pushd ~/.vim
 git submodule init
 git submodule update
 
-pushd ~/.vim/bundle/command-t
-rake make
+pushd ~/.vim/bundle/command-t/ruby/command-t
+ruby extconf.rb
+make
 popd
 
-# move any existing files
+# move any existing files (but overwrite existing symlinks)
 TIMESTAMP=$(date +'%Y-%m-%d_%H:%M:%S')
-ls ~/.vimrc  >/dev/null 2>&1 && mv ~/.vimrc  ~/.vimrc.bak$TIMESTAMP
-ls ~/.gvimrc >/dev/null 2>&1 && mv ~/.gvimrc ~/.gvimrc.bak$TIMESTAMP
+filenames=(vimrc gvimrc)
+for filename in "${filenames[@]}"
+do
+    if [[ -e ~/.$filename && ! -h ~/.$filename ]]
+    then
+        mv ~/.$filename  ~/.$filename$TIMESTAMP
+    fi
+done
 
-ln -s ~/.vim/vimrc ~/.vimrc
-ln -s ~/.vim/gvimrc ~/.gvimrc
+ln -sf ~/.vim/vimrc ~/.vimrc
+ln -sf ~/.vim/gvimrc ~/.gvimrc
 popd

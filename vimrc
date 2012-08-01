@@ -124,6 +124,9 @@ if !has('ruby')
     nnoremap <leader>b :CtrlPBuffer<cr>
 end
 
+" syntastic
+let g:syntastic_enable_signs=0
+
 
 " uncomment to disable pyflakes quickfix to make pep8 quickfix work
 " (or Ack quickfix)

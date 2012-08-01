@@ -10,8 +10,8 @@ popd
 
 # move any existing files
 TIMESTAMP=$(date +'%Y-%m-%d_%H:%M:%S')
-ls ~/.vimrc && mv ~/.vimrc ~/.vimrc.bak$TIMESTAMP
-ls ~/.gvimrc && mv ~/.gvimrc ~/.gvimrc.bak$TIMESTAMP
+ls ~/.vimrc  >/dev/null 2>&1 && mv ~/.vimrc  ~/.vimrc.bak$TIMESTAMP
+ls ~/.gvimrc >/dev/null 2>&1 && mv ~/.gvimrc ~/.gvimrc.bak$TIMESTAMP
 
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/gvimrc ~/.gvimrc

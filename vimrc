@@ -114,6 +114,10 @@ let NERDSpaceDelims=1
 " command-t
 :set wildignore+=*.pyc,htmlcov/**,_build/**
 
+" open files in new tabs
+let g:CommandTAcceptSelectionMap = '<C-t>'
+let g:CommandTAcceptSelectionTabMap = '<cr>'
+
 " command-t requires ruby, so if it's missing, fall back to ctrlp
 if !has('ruby')
     nnoremap <leader>t :CtrlP<cr>

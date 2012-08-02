@@ -93,7 +93,9 @@ nnoremap <leader>w :bufdo bdelete<CR>
 
 " backups
 
-set undodir=~/.vim/tmp/undo//     " undo files
+if v:version >= 703
+    set undodir=~/.vim/tmp/undo//     " undo files
+end
 set backupdir=~/.vim/tmp/backup// " backups
 set directory=~/.vim/tmp/swap//   " swap files
 set backup                        " enable backups

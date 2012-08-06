@@ -131,6 +131,7 @@ end
 " syntastic
 let g:syntastic_enable_signs=0
 let g:syntastic_check_on_open=1
+let g:syntastic_python_checker = 'pyflakes'
 
 
 " uncomment to disable pyflakes quickfix to make pep8 quickfix work

@@ -1,8 +1,10 @@
 set encoding=utf-8
+set nocompatible
+let mapleader = ","
 
 call pathogen#infect()
 
-set nocompatible
+
 
 " some plugins are only needed if we're in terminal mode, e.g. miniBufExpl
 if !has("gui_macvim")
@@ -12,8 +14,6 @@ if !has("gui_macvim")
 end
 
 inoremap jk <ESC>
-
-let mapleader = ","
 
 
 " for some reason, number of term colours aren't set properly

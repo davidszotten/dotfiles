@@ -135,10 +135,8 @@ let g:syntastic_enable_signs=0
 let g:syntastic_check_on_open=1
 let g:syntastic_python_checker = 'pyflakes'
 
-
-" uncomment to disable pyflakes quickfix to make pep8 quickfix work
-" (or Ack quickfix)
-let g:pyflakes_use_quickfix = 0
+" Highlight VCS conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 " sudo-write (too easy to hit by accident, but kept here to be used as a
 " reference

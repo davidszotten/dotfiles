@@ -138,6 +138,10 @@ let g:syntastic_python_checker = 'pyflakes'
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
+" delete trailing whitespace
+" allow saving with trailing whitespace
+let g:DeleteTrailingWhitespace = 0
+
 " sudo-write (too easy to hit by accident, but kept here to be used as a
 " reference
 " command W w !sudo tee % > /dev/null

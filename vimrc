@@ -208,3 +208,16 @@ augroup color_molokai_dev
     au!
     au BufWritePost molokai.vim color molokai
 augroup END
+
+
+" Mini-plugins ------------------------------------------------------------ {{{
+
+" Synstack {{{
+
+" Show the stack of syntax hilighting classes affecting whatever is under the
+" cursor.
+function! SynStack()
+  echo join(map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")'), " > ")
+endfunc
+
+" }}}

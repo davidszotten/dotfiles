@@ -62,6 +62,10 @@ set incsearch
 set showmatch
 nnoremap <leader><space> :noh<cr>
 
+" Emacs bindings in command line mode
+cnoremap <c-a> <home>
+cnoremap <c-e> <end>
+
 
 " Allow backspacing over autoindent, line breaks and start of insert action
 set backspace=indent,eol,start

@@ -127,6 +127,7 @@ end
 " added by david
 "hi ColourColumn       guifg=none guibg=#465457 gui=none
 hi ColorColumn     guifg=NONE    guibg=#272822 gui=NONE
+highlight ShowTrailingWhitespace ctermbg=219 guibg=#F92672
 
 "
 " Support for 256-color terminal

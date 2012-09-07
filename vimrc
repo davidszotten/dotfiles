@@ -11,6 +11,10 @@ if !has("gui_macvim")
     call pathogen#infect('terminal_only')
     noremap <C-L> :bn<cr>
     noremap <C-H> :bp<cr>
+
+    " use ctrl-p instead of command-t
+    let g:ctrlp_map = '<leader>t'
+    nnoremap <leader>b :CtrlPBuffer<cr>
 end
 
 inoremap jk <ESC>
@@ -21,12 +25,12 @@ set t_Co=256
 colorscheme molokai
 set guioptions=egmrt
 
+syntax on
+
 " highlight bg beyond column 80
 if v:version >= 703
     execute "set cc=" . join(range(80, 160), ',')
 end
-
-syntax on
 
 " One of the most important options to activate. Allows you to switch from an
 " unsaved buffer without saving it first. Also allows you to keep an undo
@@ -77,6 +81,7 @@ set autoindent
 " tabs expand to 4 spaces
 set shiftwidth=4
 set softtabstop=4
+set tabstop=4
 set expandtab
 
 set mouse=a
@@ -98,6 +103,10 @@ nnoremap § <ESC>
 
 " delete all buffers:
 nnoremap <leader>w :bufdo bdelete<CR>
+
+" keep what was pasted, not what was replaced when pasting in visual mode
+vnoremap p pgvy
+
 
 " backups
 
@@ -122,17 +131,17 @@ let g:yankring_history_dir =  expand('$HOME') . '/.vim'
 let NERDSpaceDelims=1
 
 " command-t
-:set wildignore+=*.pyc,htmlcov/**,_build/**
+:set wildignore+=*.pyc,htmlcov/**,_build/**,*.sw*
 
 " open files in new tabs
 let g:CommandTAcceptSelectionMap = '<C-t>'
 let g:CommandTAcceptSelectionTabMap = '<cr>'
 
 " command-t requires ruby, so if it's missing, fall back to ctrlp
-if !has('ruby')
-    nnoremap <leader>t :CtrlP<cr>
-    nnoremap <leader>b :CtrlPBuffer<cr>
-end
+" if !has('ruby')
+    " nnoremap <leader>t :CtrlP<cr>
+    " nnoremap <leader>b :CtrlPBuffer<cr>
+" end
 
 " syntastic
 let g:syntastic_enable_signs=0
@@ -219,5 +228,10 @@ augroup END
 function! SynStack()
   echo join(map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")'), " > ")
 endfunc
+
+" Highlight VCS conflict markers {{{
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+
+" }}}
 
 " }}}

@@ -1,6 +1,6 @@
 # Install
 
-    curl -s https://raw.github.com/davidszotten/dotfiles/master/bin/bootstrap.sh
+    curl -s https://raw.github.com/davidszotten/dotfiles/master/bin/bootstrap.sh|bash
 
 # Add new vim bundle
 

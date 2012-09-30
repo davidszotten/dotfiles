@@ -21,13 +21,13 @@ function create_link {
     ln -sf "$HOME/$1" "$HOME/$2"
 }
 
-create_link "dotfiles/ackrc"            ".ackrc"
-create_link "dotfiles/gitconfig"        ".gitconfig"
-create_link "dotfiles/gitignore"        ".gitignore"
-create_link "dotfiles/vim"              ".vim"
-create_link "dotfiles/vim/vimrc"        ".vimrc"
-create_link "dotfiles/vim/gvimrc"       ".gvimrc"
-create_link "dotfiles/vim/bash_profile" ".bash_profile"
+create_link "dotfiles/ackrc"         ".ackrc"
+create_link "dotfiles/bash_profile"  ".bash_profile"
+create_link "dotfiles/gitconfig"     ".gitconfig"
+create_link "dotfiles/gitignore"     ".gitignore"
+create_link "dotfiles/vim"           ".vim"
+create_link "dotfiles/vim/vimrc"     ".vimrc"
+create_link "dotfiles/vim/gvimrc"    ".gvimrc"
 popd
 
 # build c extension for command-t if possible

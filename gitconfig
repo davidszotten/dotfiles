@@ -1,0 +1,20 @@
+[user]
+    name = David Szotten
+    email = davidszotten@gmail.com
+
+[core]
+    editor = vi
+    pager = less -r
+    excludesfile = ~/.gitignore
+
+[color]
+    ui = true
+
+[alias]
+    lol = log --pretty=oneline --abbrev-commit --graph --decorate --all
+    st = status -sb
+    word-diff = diff --word-diff --word-diff-regex='[^[:space:].<>(),=:@/\\[]+' --ignore-space-change
+    diffi = diff --ignore-space-at-eol
+
+[push]
+    default = current

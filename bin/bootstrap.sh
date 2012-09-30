@@ -18,7 +18,7 @@ function create_link {
         mv "$HOME/$target" "$HOME/$target$TIMESTAMP"
     fi
 
-    ln -sf $"HOME/$1" "$HOME/$2"
+    ln -sf "$HOME/$1" "$HOME/$2"
 }
 
 create_link "dotfiles/ackrc"            ".ackrc"

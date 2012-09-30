@@ -6,7 +6,7 @@
 	url = https://github.com/mileszs/ack.vim
 [submodule "vim/bundle/command-t"]
 	path = vim/bundle/command-t
-	url = git@github.com:davidszotten/Command-T/
+	url = https://github.com/davidszotten/Command-T/
 [submodule "vim/bundle/ctrlp"]
 	path = vim/bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim/
@@ -27,7 +27,7 @@
 	url = https://github.com/Lokaltog/vim-powerline/
 [submodule "vim/bundle/python-unittest-helper"]
 	path = vim/bundle/python-unittest-helper
-	url = git@github.com:davidszotten/vim-python-unittest-helper/
+	url = https://github.com/davidszotten/vim-python-unittest-helper/
 [submodule "vim/bundle/surround"]
 	path = vim/bundle/surround
 	url = https://github.com/tpope/vim-surround/
@@ -36,7 +36,7 @@
 	url = https://github.com/scrooloose/syntastic/
 [submodule "vim/bundle/trailing-whitespace"]
 	path = vim/bundle/trailing-whitespace
-	url = git@github.com:davidszotten/vim-trailing-whitespace/
+	url = https://github.com/davidszotten/vim-trailing-whitespace/
 [submodule "vim/terminal_only/minibufexpl"]
 	path = vim/terminal_only/minibufexpl
 	url = https://github.com/fholgado/minibufexpl.vim/

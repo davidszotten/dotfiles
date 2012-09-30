@@ -1,4 +1,5 @@
---type-set puppet=.pp
+--type-set
+puppet=.pp
 --ignore-dir=versions
 --ignore-dir=migrations
 --ignore-dir=htmlcov

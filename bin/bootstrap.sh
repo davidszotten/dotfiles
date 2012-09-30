@@ -2,7 +2,7 @@
 
 test -d ~/dotfiles || git clone https://github.com/davidszotten/dotfiles ~/dotfiles
 
-pushd ~/dotfiles
+pushd ~/dotfiles >/dev/null
 git submodule init
 git submodule update
 
@@ -28,10 +28,10 @@ create_link "dotfiles/gitignore"     ".gitignore"
 create_link "dotfiles/vim"           ".vim"
 create_link "dotfiles/vim/vimrc"     ".vimrc"
 create_link "dotfiles/vim/gvimrc"    ".gvimrc"
-popd
+popd >/dev/null
 
 # build c extension for command-t if possible
-pushd ~/dotfiles/vim/bundle/command-t/ruby/command-t
-ruby extconf.rb
+pushd ~/dotfiles/vim/bundle/command-t/ruby/command-t >/dev/null
+test -e Makefile || ruby extconf.rb
 make
-popd
+popd >/dev/null

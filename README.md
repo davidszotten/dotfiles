@@ -1,7 +1,7 @@
 # Install
 
-    git clone git@github.com:davidszotten/dotvim.git ~/.vim && ~/.vim/install
+    curl -s https://raw.github.com/davidszotten/dotfiles/master/bin/bootstrap.sh
 
-# Add new bundle
+# Add new vim bundle
 
-    git submodule add git://github.com/bundle.git bundle/module
+    git submodule add https://github.com/author/bundle/ vim/bundle/module

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-test -d ~/dotfiles || git clone git@github.com:davidszotten/dotfiles.git ~/dotfiles
+test -d ~/dotfiles || git clone https://github.com/davidszotten/dotfiles ~/dotfiles
 
 pushd ~/dotfiles
 git submodule init

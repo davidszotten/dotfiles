@@ -1,4 +1,8 @@
 
+# prevent accidantally closing shells
+# ignores n consecutive EOF
+export IGNOREEOF=2
+
 ### bash history
 
 # Erase duplicates

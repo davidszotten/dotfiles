@@ -1,5 +1,7 @@
---type-set
-puppet=.pp
+--type-set=pp=.pp
+--type-set=erb=.erb
+--type-set=rb=.rb
+
 --ignore-dir=versions
 --ignore-dir=migrations
 --ignore-dir=htmlcov

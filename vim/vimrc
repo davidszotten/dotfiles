@@ -177,6 +177,9 @@ autocmd Filetype mkd setlocal nofoldenable
 " select last paste
 nnoremap gp `[v`]
 
+" Don't clobber the unnamed register when pasting over text in visual mode.
+vnoremap p pgvy
+
 set listchars=tab:▸\ ,eol:¬
 " Toggle [i]nvisible characters
 nnoremap <leader>i :set list!<cr>

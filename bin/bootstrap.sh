@@ -25,7 +25,7 @@ create_link "dotfiles/ackrc"         ".ackrc"
 create_link "dotfiles/bash_profile"  ".bash_profile"
 create_link "dotfiles/gitconfig"     ".gitconfig"
 create_link "dotfiles/gitignore"     ".gitignore"
-create_link "dotfiles/vim"           ".vim"
+create_link "dotfiles/vim/"           ".vim"
 create_link "dotfiles/vim/vimrc"     ".vimrc"
 create_link "dotfiles/vim/gvimrc"    ".gvimrc"
 popd >/dev/null

@@ -16,10 +16,15 @@ shopt -s histappend
 ### aliases
 
 alias ls='ls -G'
+alias clean_pyc='find . -name "*.pyc" -delete'
 
 # hack to set a default user. another -U overrides this
 alias psql="psql -U postgres"
 
 
 # local settings
-source .bash_profile.local
+local_bashrc="$HOME/.bash_profile.local"
+if [ -e "$local_bashrc" ]
+then
+    source "$local_bashrc"
+fi

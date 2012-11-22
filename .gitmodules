@@ -31,6 +31,9 @@
 [submodule "vim/bundle/python-unittest-helper"]
 	path = vim/bundle/python-unittest-helper
 	url = https://github.com/davidszotten/vim-python-unittest-helper/
+[submodule "vim/bundle/repeat"]
+	path = vim/bundle/repeat
+	url = git://github.com/tpope/vim-repeat.git
 [submodule "vim/bundle/surround"]
 	path = vim/bundle/surround
 	url = https://github.com/tpope/vim-surround/

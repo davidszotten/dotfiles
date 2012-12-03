@@ -12,6 +12,12 @@ export HISTSIZE=5000
 # append to bash_history if Terminal.app quits
 shopt -s histappend
 
+# i never freeze my terminal, but i would like forward search
+stty stop 'undef'
+
+# C-x C-e drops into $EDITOR to edit the current command before executing
+export EDITOR=vim
+
 
 ### aliases
 

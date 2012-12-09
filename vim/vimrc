@@ -111,6 +111,7 @@ vnoremap p pgvy
 " backups
 
 if v:version >= 703
+    set undofile
     set undodir=~/.vim/tmp/undo//     " undo files
 end
 set backupdir=~/.vim/tmp/backup// " backups

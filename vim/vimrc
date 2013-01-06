@@ -107,6 +107,9 @@ nnoremap <leader>w :bufdo bdelete<CR>
 " keep what was pasted, not what was replaced when pasting in visual mode
 vnoremap p pgvy
 
+" allow use of %% to insert current directory in ex mode
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
 
 " backups
 

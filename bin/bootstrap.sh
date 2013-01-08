@@ -3,8 +3,13 @@
 test -d ~/dotfiles || git clone https://github.com/davidszotten/dotfiles ~/dotfiles
 
 pushd ~/dotfiles >/dev/null
-git submodule init
-git submodule update
+
+# update submodules in parallel
+submodules=$(git submodule status)
+n_submodules=$(echo "$submodules"| wc -l)
+echo "$submodules" \
+  | awk '{print $2}' \
+  | xargs -P$n_submodules -n1 git submodule update --init
 
 function create_link {
     # move any existing files (but overwrite existing symlinks)

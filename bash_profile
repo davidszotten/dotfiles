@@ -23,6 +23,7 @@ export EDITOR=vim
 
 alias ls='ls -G'
 alias clean_pyc='find . -name "*.pyc" -delete'
+alias figlet='figlet -f colossal -m 1'
 
 # hack to set a default user. another -U overrides this
 alias psql="psql -U postgres"

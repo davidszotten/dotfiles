@@ -27,6 +27,9 @@ alias clean_pyc='find . -name "*.pyc" -delete'
 # hack to set a default user. another -U overrides this
 alias psql="psql -U postgres"
 
+# force tmux to use 256 colours
+alias tmux="tmux -2"
+
 
 # local settings
 local_bashrc="$HOME/.bash_profile.local"

@@ -122,6 +122,9 @@ set directory=~/.vim/tmp/swap//   " swap files
 set backup                        " enable backups
 set noswapfile                    " It's 2012, Vim.
 
+" auto-reload changed files
+set autoread
+
 
 " plugin settings
 

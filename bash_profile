@@ -31,6 +31,10 @@ alias psql="psql -U postgres"
 # force tmux to use 256 colours
 alias tmux="tmux -2"
 
+# for tmux status bar
+source "$HOME/dotfiles/tmux/tmux_adapter.sh"
+PROMPT_COMMAND="_tmux_set_var_sync"
+
 
 # local settings
 local_bashrc="$HOME/.bash_profile.local"

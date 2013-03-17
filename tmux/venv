@@ -1,8 +1,7 @@
 #!/bin/bash
 
-pwd=$(dirname $0)
-
-source "$pwd/tmux_adapter.sh"
+libdir=$(dirname $0)
+source "$libdir/tmux_adapter.sh"
 
 venv="$(_tmux_get_var venv)"
 if [ -n "$venv" ]

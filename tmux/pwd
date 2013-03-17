@@ -1,7 +1,12 @@
 #!/bin/bash
 
-pwd=$(dirname $0)
+libdir=$(dirname $0)
+source "$libdir/tmux_adapter.sh"
 
-source "$pwd/tmux_adapter.sh"
-
-echo "$(_tmux_get_var pwd)"
+pwd="$(_tmux_get_var pwd)"
+if [[ "$pwd" == "$HOME" ]]
+then
+    echo "~"
+else
+    echo "$(basename $pwd)"
+fi

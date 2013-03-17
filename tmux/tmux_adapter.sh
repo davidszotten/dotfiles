@@ -38,15 +38,12 @@ _tmux_set_var_sync() {
     fi
 
     local prefix=$(_tmux_prefix)
-    local pwd="$PWD"
-    if [[ "$pwd" =~ ^"$HOME"(/|$) ]]
-    then
-        pwd="~${pwd#$HOME}"
-    fi
-    tmux setenv "${prefix}_pwd" "$pwd"
+    tmux setenv "${prefix}_pwd" "$PWD"
 
     if [ -n "$VIRTUAL_ENV" ]
     then
         tmux setenv "${prefix}_venv" "$(basename $VIRTUAL_ENV)"
+    else
+        tmux setenv "${prefix}_venv" ""
     fi
 }

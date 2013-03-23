@@ -34,6 +34,7 @@ create_link "dotfiles/inputrc"       ".inputrc"
 create_link "dotfiles/vim/"          ".vim"
 create_link "dotfiles/vim/vimrc"     ".vimrc"
 create_link "dotfiles/vim/gvimrc"    ".gvimrc"
+create_link "dotfiles/pystartup"     ".pystartup"
 popd >/dev/null
 
 # build c extension for command-t if possible

@@ -35,6 +35,21 @@ alias psql="psql -U postgres"
 alias tmux="tmux -2"
 
 
+# homebrew where available
+if [[ $(which brew) ]]
+then
+    BREW=$
+    PATH=$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH
+
+    if [ -f $(brew --prefix)/etc/bash_completion ]
+    then
+        . $(brew --prefix)/etc/bash_completion
+    fi
+fi
+
+PATH=$PATH:$HOME/bin
+
+
 # local settings
 local_bashrc="$HOME/.bash_profile.local"
 if [ -e "$local_bashrc" ]

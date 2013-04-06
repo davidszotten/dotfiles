@@ -18,6 +18,9 @@ stty stop 'undef'
 # C-x C-e drops into $EDITOR to edit the current command before executing
 export EDITOR=vim
 
+# for python readline support
+export PYTHONSTARTUP=~/.pystartup
+
 
 ### aliases
 

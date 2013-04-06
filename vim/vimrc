@@ -133,6 +133,7 @@ nnoremap <leader>s :Scratch <cr>
 
 " yankring plugin
 let g:yankring_history_dir =  expand('$HOME') . '/.vim'
+let g:yankring_paste_using_g = 0
 
 " space around/after comments
 let NERDSpaceDelims=1

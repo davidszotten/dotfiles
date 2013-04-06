@@ -47,7 +47,25 @@ then
     fi
 fi
 
-PATH=$PATH:$HOME/bin
+PATH=$PATH:$HOME/dotfiles/bin:$HOME/bin
+
+
+# prompt
+GRAY="\[\033[1;30m\]"
+PINK="\[\033[0;31m\]"
+GREEN="\[\033[0;32m\]"
+RESET="\[\033[0m\]"
+ITERM_TAB_RESET="\[\033]0;\007\]"
+
+PS1="${GRAY}\u@\h:${PINK}\W"
+PS1="$PS1${GREEN}\$(type -t __git_ps1 > /dev/null && __git_ps1 \" (%s)\")"
+PS1="$PS1$RESET\$ "
+PS1="$PS1$ITERM_TAB_RESET"
+
+
+# pip download caching
+export PIP_DOWNLOAD_CACHE="$HOME/.pip/cache"
+mkdir -p $PIP_DOWNLOAD_CACHE
 
 
 # local settings

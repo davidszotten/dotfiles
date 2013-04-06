@@ -26,15 +26,17 @@ function create_link {
     ln -sf "$HOME/$src" "$HOME/$target"
 }
 
-create_link "dotfiles/ackrc"         ".ackrc"
-create_link "dotfiles/bash_profile"  ".bash_profile"
-create_link "dotfiles/gitconfig"     ".gitconfig"
-create_link "dotfiles/gitignore"     ".gitignore"
-create_link "dotfiles/inputrc"       ".inputrc"
-create_link "dotfiles/vim/"          ".vim"
-create_link "dotfiles/vim/vimrc"     ".vimrc"
-create_link "dotfiles/vim/gvimrc"    ".gvimrc"
-create_link "dotfiles/pystartup"     ".pystartup"
+create_link "dotfiles/ackrc"            ".ackrc"
+create_link "dotfiles/bash_profile"     ".bash_profile"
+create_link "dotfiles/gitconfig"        ".gitconfig"
+create_link "dotfiles/gitignore"        ".gitignore"
+create_link "dotfiles/inputrc"          ".inputrc"
+create_link "dotfiles/pystartup.py"     ".pystartup.py"
+create_link "dotfiles/tmux/tmux.conf"   ".tmux.conf"
+create_link "dotfiles/vim/"             ".vim"
+create_link "dotfiles/vim/vimrc"        ".vimrc"
+create_link "dotfiles/vim/gvimrc"       ".gvimrc"
+
 popd >/dev/null
 
 # build c extension for command-t if possible

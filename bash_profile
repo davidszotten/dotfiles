@@ -19,7 +19,7 @@ stty stop 'undef'
 export EDITOR=vim
 
 # for python readline support
-export PYTHONSTARTUP=~/.pystartup
+export PYTHONSTARTUP=~/.pystartup.py
 
 
 ### aliases

@@ -17,6 +17,10 @@
         KeyCode::ESCAPE, KeyCode::F
     </autogen>
     <autogen>
+        --KeyToKey-- KeyCode::Y, ModifierFlag::OPTION_L,
+        KeyCode::ESCAPE, KeyCode::Y
+    </autogen>
+    <autogen>
         --KeyToKey-- KeyCode::DELETE, ModifierFlag::OPTION_L,
         KeyCode::ESCAPE, KeyCode::DELETE
     </autogen>

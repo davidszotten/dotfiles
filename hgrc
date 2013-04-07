@@ -1,0 +1,9 @@
+[ui]
+username = David Szotten <davidszotten@gmail.com>
+editor = vim
+
+[extensions]
+color =
+
+[alias]
+d = !"$HG" diff -p --color=always $@ | less -R

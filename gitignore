@@ -2,5 +2,5 @@
 .sw*
 *.pyc
 htmlcov
-
-
+site-packages
+chromedriver.log

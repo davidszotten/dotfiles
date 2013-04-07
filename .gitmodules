@@ -43,6 +43,9 @@
 [submodule "vim/bundle/trailing-whitespace"]
 	path = vim/bundle/trailing-whitespace
 	url = https://github.com/davidszotten/vim-trailing-whitespace/
+[submodule "vim/bundle/virtualenv"]
+	path = vim/bundle/virtualenv
+	url = https://github.com/jmcantrell/vim-virtualenv
 [submodule "vim/terminal_only/minibufexpl"]
 	path = vim/terminal_only/minibufexpl
 	url = https://github.com/fholgado/minibufexpl.vim/

@@ -216,12 +216,44 @@ let g:command_t_traverse_to_scm_root = 1
 
 " File type specific settings
 
+
 " python
+
+" virtualenvwrapper adds a (gitignored) symlink to site-pacakges
+" in the project root
+
+function! s:FindSitePackages()
+    return finddir('site-packages', expand('%:p') . ';')
+endfunction
+
+cnoremap <expr> ^^ finddir('site-packages', expand('%:p') . ';') . "/"
+
+
+function! s:ActivateVirtualenv()
+    " TODO: better way to find virtualenv
+    "
+    let l:site_packages = s:FindSitePackages()
+    let l:virtualenv = fnamemodify(l:site_packages, ':h:t')
+    if l:virtualenv == '.'
+        echo "deactivating"
+        call virtualenv#deactivate()
+        execute ":SyntasticCheck"
+        return 0
+    elseif exists('g:virtualenv_path') && l:virtualenv ==# g:virtualenv_name
+        return 0
+    else
+        echo "activating ".l:virtualenv
+        call virtualenv#activate(l:virtualenv)
+        execute ":SyntasticCheck"
+    endif
+endfunction
+
 augroup ft_python
     au!
     au FileType python nnoremap <leader>p Oimport ipdb; ipdb.set_trace()<ESC>
     au FileType python nnoremap <leader>P oimport ipdb; ipdb.set_trace()<ESC>
-    au FileType python ab pdb import ipdb; ipdb.set_trace()
+
+    au BufEnter *.py :call s:ActivateVirtualenv()
 augroup END
 
 " Reload the colorscheme whenever we write the file.

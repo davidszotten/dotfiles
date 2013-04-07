@@ -139,7 +139,7 @@ let g:yankring_paste_using_g = 0
 let NERDSpaceDelims=1
 
 " command-t
-:set wildignore+=*.pyc,htmlcov/**,_build/**,*.sw*
+:set wildignore+=*.pyc,htmlcov/**,_build/**,*.sw*,_build/**,site-packages/**
 
 " open files in new tabs
 let g:CommandTAcceptSelectionMap = '<C-t>'
@@ -232,18 +232,15 @@ let g:command_t_traverse_to_scm_root = 1
 " virtualenvwrapper adds a (gitignored) symlink to site-pacakges
 " in the project root
 
-function! s:FindSitePackages()
-    return finddir('site-packages', expand('%:p') . ';')
+function! s:FindVirtualenv()
+    return  matchstr(expand('%:p'), '\v' . $PROJECT_HOME . '/\zs([^/]+)\ze')
 endfunction
 
 cnoremap <expr> ^^ finddir('site-packages', expand('%:p') . ';') . "/"
 
 
 function! s:ActivateVirtualenv()
-    " TODO: better way to find virtualenv
-    "
-    let l:site_packages = s:FindSitePackages()
-    let l:virtualenv = fnamemodify(l:site_packages, ':h:t')
+    let l:virtualenv = s:FindVirtualenv()
     if l:virtualenv == '.'
         " echo "deactivating"
         call virtualenv#deactivate()

@@ -204,6 +204,16 @@ set laststatus=2
 set fillchars+=stl:\ ,stlnc:\
 let g:Powerline_mode_n = ' N '
 
+" Replace the scrollpercent segment with the charcode segment
+call Pl#Theme#ReplaceSegment('scrollpercent', 'virtualenv')
+call Pl#Theme#RemoveSegment('fileformat')
+call Pl#Theme#RemoveSegment('fileencoding')
+call Pl#Theme#RemoveSegment('filetype')
+
+" we don't want to use the virtualenv from the launching shell
+let $VIRTUAL_ENV = 'qq'
+
+
 " make it easier to make it easier to edit text.
 if has("gui_macvim")
     :nnoremap <leader>ev :tabnew $MYVIMRC<cr>
@@ -235,14 +245,14 @@ function! s:ActivateVirtualenv()
     let l:site_packages = s:FindSitePackages()
     let l:virtualenv = fnamemodify(l:site_packages, ':h:t')
     if l:virtualenv == '.'
-        echo "deactivating"
+        " echo "deactivating"
         call virtualenv#deactivate()
         execute ":SyntasticCheck"
         return 0
     elseif exists('g:virtualenv_path') && l:virtualenv ==# g:virtualenv_name
         return 0
     else
-        echo "activating ".l:virtualenv
+        " echo "activating ".l:virtualenv
         call virtualenv#activate(l:virtualenv)
         execute ":SyntasticCheck"
     endif
@@ -253,7 +263,7 @@ augroup ft_python
     au FileType python nnoremap <leader>p Oimport ipdb; ipdb.set_trace()<ESC>
     au FileType python nnoremap <leader>P oimport ipdb; ipdb.set_trace()<ESC>
 
-    au BufEnter *.py :call s:ActivateVirtualenv()
+    au BufRead,BufEnter *.py :call s:ActivateVirtualenv()
 augroup END
 
 " Reload the colorscheme whenever we write the file.

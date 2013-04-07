@@ -54,11 +54,21 @@ PATH=$PATH:$HOME/dotfiles/bin:$HOME/bin
 GRAY="\[\033[1;30m\]"
 PINK="\[\033[0;31m\]"
 GREEN="\[\033[0;32m\]"
+BLUE="\[\033[0;34m\]"
 RESET="\[\033[0m\]"
 ITERM_TAB_RESET="\[\033]0;\007\]"
 
+_jobs_running() {
+    local jobs_running=$(jobs -p| wc -l| tr -d ' ')
+    if [[ "$jobs_running" != "0" ]]
+    then
+        echo "($jobs_running)"
+    fi
+}
+
 PS1="${GRAY}\u@\h:${PINK}\W"
 PS1="$PS1${GREEN}\$(type -t __git_ps1 > /dev/null && __git_ps1 \" (%s)\")"
+PS1="$PS1$BLUE\$(_jobs_running)"
 PS1="$PS1$RESET\$ "
 PS1="$PS1$ITERM_TAB_RESET"
 

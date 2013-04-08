@@ -236,20 +236,24 @@ function! s:FindVirtualenv()
     return  matchstr(expand('%:p'), '\v' . $PROJECT_HOME . '/\zs([^/]+)\ze')
 endfunction
 
-cnoremap <expr> ^^ finddir('site-packages', expand('%:p') . ';') . "/"
+function! g:FindSitePackages()
+    let l:virtualenv = s:FindVirtualenv()
+    let l:search_path = $WORKON_HOME . '/' . l:virtualenv . '/**'
+    return finddir('site-packages', l:search_path) . '/'
+endfunction
+
+cnoremap <expr> ^^ g:FindSitePackages()
 
 
 function! s:ActivateVirtualenv()
     let l:virtualenv = s:FindVirtualenv()
     if l:virtualenv == '.'
-        " echo "deactivating"
         call virtualenv#deactivate()
         execute ":SyntasticCheck"
         return 0
     elseif exists('g:virtualenv_path') && l:virtualenv ==# g:virtualenv_name
         return 0
     else
-        " echo "activating ".l:virtualenv
         call virtualenv#activate(l:virtualenv)
         execute ":SyntasticCheck"
     endif
@@ -260,7 +264,8 @@ augroup ft_python
     au FileType python nnoremap <leader>p Oimport ipdb; ipdb.set_trace()<ESC>
     au FileType python nnoremap <leader>P oimport ipdb; ipdb.set_trace()<ESC>
 
-    au BufRead,BufEnter *.py :call s:ActivateVirtualenv()
+    " Too slow
+    " au BufRead,BufEnter *.py :call s:ActivateVirtualenv()
 augroup END
 
 " Reload the colorscheme whenever we write the file.

@@ -38,9 +38,3 @@ create_link "dotfiles/vim/vimrc"        ".vimrc"
 create_link "dotfiles/vim/gvimrc"       ".gvimrc"
 
 popd >/dev/null
-
-# build c extension for command-t if possible
-pushd ~/dotfiles/vim/bundle/command-t/ruby/command-t >/dev/null
-test -e Makefile || ruby extconf.rb
-make
-popd >/dev/null

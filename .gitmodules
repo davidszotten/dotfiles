@@ -10,6 +10,9 @@
 [submodule "vim/bundle/ctrlp"]
 	path = vim/bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim/
+[submodule "vim/bundle/cypher"]
+	path = vim/bundle/cypher
+	url = git@github.com:davidszotten/cypher-vim-syntax.git
 [submodule "vim/bundle/eunuch"]
 	path = vim/bundle/eunuch
 	url = https://github.com/tpope/vim-eunuch

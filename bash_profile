@@ -72,6 +72,8 @@ PS1="$PS1$BLUE\$(_jobs_running)"
 PS1="$PS1$RESET\$ "
 PS1="$PS1$ITERM_TAB_RESET"
 
+GIT_PS1_SHOWDIRTYSTATE=1
+
 
 # pip download caching
 export PIP_DOWNLOAD_CACHE="$HOME/.pip/cache"

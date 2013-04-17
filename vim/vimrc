@@ -95,6 +95,9 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 noremap <C-L> :tabnext<cr>
 noremap <C-H> :tabprevious<cr>
 
+" system clipboard integration
+vnoremap <leader>y "*ygv
+
 
 " backups
 

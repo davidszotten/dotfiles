@@ -17,22 +17,15 @@ if v:version >= 703
     execute "set cc=" . join(range(80, 160), ',')
 end
 
-" One of the most important options to activate. Allows you to switch from an
-" unsaved buffer without saving it first. Also allows you to keep an undo
-" history for multiple files. Vim will complain if you try to quit without
-" saving, and swap files will keep you safe if your computer crashes.
 set hidden
+set hlsearch
 
 " bash style tab completion for finding files
 set wildmenu
 set wildmode=list:longest
 
-
 " Show partial commands in the last line of the screen
 set showcmd
-
-" Highlight searches (turn off with :nohl)
-set hlsearch
 
 " Modelines have historically been a source of security vulnerabilities.  As
 " such, it may be a good idea to disable them and use the securemodelines

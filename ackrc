@@ -1,6 +1,7 @@
 --type-set=pp=.pp
 --type-set=erb=.erb
 --type-set=rb=.rb
+--type-set=rst=.rst
 
 --ignore-dir=versions
 --ignore-dir=migrations

@@ -274,6 +274,18 @@ function! s:ActivateVirtualenv()
     endif
 endfunction
 
+function! s:EnsureVimVirtualenv()
+    let l:virtualenv = "vim"
+    if exists('g:virtualenv_path') && l:virtualenv ==# g:virtualenv_name
+        return
+    else
+        call virtualenv#activate(l:virtualenv)
+        execute ":SyntasticCheck"
+    endif
+endfunction
+
+
+
 augroup ft_python
     au!
     au FileType python nnoremap <leader>p Oimport ipdb; ipdb.set_trace()<ESC>
@@ -281,6 +293,7 @@ augroup ft_python
 
     " Too slow
     " au BufRead,BufEnter *.py :call s:ActivateVirtualenv()
+    au BufRead,BufEnter *.py :call s:EnsureVimVirtualenv()
 augroup END
 
 " Reload the colorscheme whenever we write the file.

@@ -219,11 +219,6 @@ set laststatus=2
 set fillchars+=stl:\ ,stlnc:\
 let g:Powerline_mode_n = ' N '
 
-" Replace the scrollpercent segment with the charcode segment
-call Pl#Theme#ReplaceSegment('scrollpercent', 'virtualenv')
-call Pl#Theme#RemoveSegment('fileformat')
-call Pl#Theme#RemoveSegment('fileencoding')
-call Pl#Theme#RemoveSegment('filetype')
 
 " we don't want to use the virtualenv from the launching shell
 let $VIRTUAL_ENV = 'qq'

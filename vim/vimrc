@@ -103,8 +103,11 @@ noremap <C-H> :tabprevious<cr>
 vnoremap <leader>y "*ygv
 
 " Keep search matches in the middle of the window.
-nnoremap n nzzzv
-nnoremap N Nzzzv
+" skip until i can figure out how to get `search hit BOTTOM, continuing at
+" TOP` back
+"
+" nnoremap n nzzzv
+" nnoremap N Nzzzv
 
 " Same when jumping around
 nnoremap g; g;zz

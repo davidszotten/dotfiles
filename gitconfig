@@ -20,3 +20,6 @@
 
 [push]
     default = current
+
+[advice]
+    statusHints = false

@@ -12,9 +12,9 @@ set guioptions=egmrt
 
 syntax on
 
-" highlight bg beyond column 80
+" highlight bg at column 80
 if v:version >= 703
-    execute "set cc=" . join(range(80, 160), ',')
+    set cc=80
 end
 
 set hidden

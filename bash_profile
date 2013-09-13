@@ -27,7 +27,9 @@ export PYTHONSTARTUP=~/.pystartup.py
 alias ls='ls -G'
 alias clean_pyc='find . -name "*.pyc" -delete'
 alias figlet='figlet -f colossal -m 1'
-alias conflictack='ack "^(<|>|=){7}($| )"'
+alias conflictack='ack -a "^(<|>|=){7}($| )"'
+
+# git_open_conflicts git ls-files -m|sort -u|xargs mvim
 
 # hack to set a default user. another -U overrides this
 alias psql="psql -U postgres"
@@ -71,14 +73,24 @@ PS1="${GRAY}\u@\h:${PINK}\W"
 PS1="$PS1${GREEN}\$(type -t __git_ps1 > /dev/null && __git_ps1 \" (%s)\")"
 PS1="$PS1$BLUE\$(_jobs_running)"
 PS1="$PS1$RESET\$ "
+# PS1="$PS1$RESET\342\236\244 "
 PS1="$PS1$ITERM_TAB_RESET"
 
 GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWUPSTREAM="auto"
 
 
 # pip download caching
 export PIP_DOWNLOAD_CACHE="$HOME/.pip/cache"
 mkdir -p $PIP_DOWNLOAD_CACHE
+
+
+# complete for hub pull-request
+_hub_complete() {
+    local cur=${COMP_WORDS[COMP_CWORD]}
+    COMPREPLY=( $(compgen -W "pull-request" -- $cur) )
+}
+complete -F _hub_complete hub
 
 
 # local settings

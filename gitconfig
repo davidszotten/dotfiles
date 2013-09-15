@@ -11,6 +11,7 @@
     ui = true
 
 [alias]
+    co = checkout
     lol = log --pretty=oneline --abbrev-commit --graph --decorate --all
     st = status -sb
     word-diff = diff --color-words --word-diff-regex='[A-z_][A-z_]+'

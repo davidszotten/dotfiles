@@ -21,6 +21,8 @@ export EDITOR=vim
 # for python readline support
 export PYTHONSTARTUP=~/.pystartup.py
 
+export GREP_OPTIONS='--color=auto'
+
 
 ### aliases
 

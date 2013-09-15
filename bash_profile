@@ -82,6 +82,8 @@ GIT_PS1_SHOWDIRTYSTATE=1
 export PIP_DOWNLOAD_CACHE="$HOME/.pip/cache"
 mkdir -p $PIP_DOWNLOAD_CACHE
 
+export PIP_REQUIRE_VIRTUALENV=true
+
 
 # local settings
 local_bashrc="$HOME/.bash_profile.local"

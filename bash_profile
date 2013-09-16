@@ -21,6 +21,8 @@ export EDITOR=vim
 # for python readline support
 export PYTHONSTARTUP=~/.pystartup.py
 
+export GREP_OPTIONS='--color=auto'
+
 
 ### aliases
 
@@ -83,6 +85,8 @@ GIT_PS1_SHOWUPSTREAM="auto"
 # pip download caching
 export PIP_DOWNLOAD_CACHE="$HOME/.pip/cache"
 mkdir -p $PIP_DOWNLOAD_CACHE
+
+export PIP_REQUIRE_VIRTUALENV=true
 
 
 # complete for hub pull-request

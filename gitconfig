@@ -11,12 +11,14 @@
     ui = true
 
 [alias]
+    co = checkout
     lol = log --pretty=oneline --abbrev-commit --graph --decorate --all
     st = status -sb
     word-diff = diff --color-words --word-diff-regex='[A-z_][A-z_]+'
     diffi = diff --ignore-space-at-eol
     latest = rev-parse HEAD
     latest-tag = describe --abbrev=0
+    recent-branches = !git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short):%(committerdate:relative)' |column -t -s ':'
 
 [push]
     default = current

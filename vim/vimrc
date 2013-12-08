@@ -135,6 +135,10 @@ set noswapfile                    " It's 2012, Vim.
 set autoread
 
 
+" allow block selecting beyond eol
+set virtualedit=block
+
+
 " plugin settings
 
 " scratch plugin

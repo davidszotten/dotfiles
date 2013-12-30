@@ -46,7 +46,7 @@ vnoremap / /\v
 set gdefault
 set incsearch
 set showmatch
-nnoremap <leader><space> :noh<cr>
+nnoremap <silent> <leader><space> :noh<cr>:syntax sync fromstart<cr>
 
 " Emacs bindings in command line mode
 cnoremap <c-a> <home>

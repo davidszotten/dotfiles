@@ -46,3 +46,6 @@
 [submodule "vim/bundle/virtualenv"]
 	path = vim/bundle/virtualenv
 	url = https://github.com/jmcantrell/vim-virtualenv
+[submodule "vim/bundle/unimpaired"]
+	path = vim/bundle/unimpaired
+	url = https://github.com/tpope/vim-unimpaired

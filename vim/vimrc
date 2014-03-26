@@ -87,6 +87,9 @@ nnoremap § <ESC>
 " i prefer full screen help
 :cabbrev help tab help
 
+" delete current buffer
+nnoremap <leader>d :bd<CR>
+
 " delete all buffers:
 nnoremap <leader>w :call CloseAll()<CR>
 

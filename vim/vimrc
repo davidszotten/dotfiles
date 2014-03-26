@@ -11,6 +11,7 @@ colorscheme molokai
 set guioptions=egmrt
 
 syntax on
+set synmaxcol=200  " default was 3000
 
 " highlight bg at column 80
 if v:version >= 703

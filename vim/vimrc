@@ -156,7 +156,7 @@ let g:yankring_paste_using_g = 0
 let NERDSpaceDelims=1
 
 " command-t
-:set wildignore+=*.pyc,htmlcov/**,_build/**,*.sw*,_build/**,site-packages/**
+:set wildignore+=*.pyc,htmlcov/**,_build/**,*.sw*,_build/**,site-packages/**,__pycache__,
 
 " open files in new tabs
 let g:CommandTAcceptSelectionMap = '<C-t>'

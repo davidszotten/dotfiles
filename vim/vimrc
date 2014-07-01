@@ -209,8 +209,7 @@ let g:jedi#show_call_signatures = ""
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 " delete trailing whitespace
-" allow saving with trailing whitespace
-let g:DeleteTrailingWhitespace = 0
+let g:DeleteTrailingWhitespace_Action = 'delete'
 
 " sudo-write (too easy to hit by accident, but kept here to be used as a
 " reference

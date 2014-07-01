@@ -199,6 +199,12 @@ let g:syntastic_enable_signs=0
 let g:syntastic_check_on_open=1
 let g:syntastic_python_checker = 'pyflakes'
 
+" jedi
+" let g:jedi#completions_enabled = 0
+let g:jedi#goto_definitions_command = 'gD'
+autocmd FileType python setlocal completeopt-=preview
+let g:jedi#show_call_signatures = ""
+
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 

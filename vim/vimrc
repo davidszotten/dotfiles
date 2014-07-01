@@ -138,6 +138,9 @@ set noswapfile                    " It's 2012, Vim.
 " auto-reload changed files
 set autoread
 
+" autoread doesn't work when switching terminal windows. fix using vitality.vim
+au FocusGained,BufEnter * :silent! !
+
 
 " allow block selecting beyond eol
 set virtualedit=block

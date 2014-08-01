@@ -119,7 +119,7 @@ else
    hi Comment         guifg=#75715E
    hi CursorLine                    guibg=#293739
    hi CursorColumn                  guibg=#293739
-   hi LineNr          guifg=#BCBCBC guibg=#232526
+   hi LineNr          guifg=#75715E
    " hi NonText         guifg=#BCBCBC guibg=#232526
    hi NonText         guifg=#465457
 end
@@ -136,7 +136,7 @@ if &t_Co > 255
    hi Boolean         ctermfg=135
    hi Character       ctermfg=144
    hi Number          ctermfg=135
-   hi String          ctermfg=144
+   hi String          ctermfg=6
    hi Conditional     ctermfg=161               cterm=bold
    hi Constant        ctermfg=135               cterm=bold
    hi Cursor          ctermfg=16  ctermbg=253
@@ -209,11 +209,11 @@ if &t_Co > 255
    hi WarningMsg      ctermfg=231 ctermbg=238   cterm=bold
    hi WildMenu        ctermfg=81  ctermbg=16
 
-   hi Normal          ctermfg=252 ctermbg=233
+   hi Normal          ctermfg=7 ctermbg=233
    hi Comment         ctermfg=59
    hi CursorLine                  ctermbg=234   cterm=none
    hi CursorColumn                ctermbg=234
-   hi LineNr          ctermfg=250 ctermbg=234
+   hi LineNr          ctermfg=245 ctermbg=233
    hi NonText         ctermfg=245 ctermbg=233
 
    hi ColorColumn     ctermfg=NONE    ctermbg=234 cterm=NONE

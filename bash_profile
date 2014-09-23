@@ -78,6 +78,12 @@ function __prompt_command() {
 
     GIT_PS1_SHOWDIRTYSTATE=1
 
+    if [ -n "$VIRTUAL_ENV" ]
+    then
+        VIRTUAL_ENV_NAME=$(basename "$VIRTUAL_ENV")
+        PS1+="($VIRTUAL_ENV_NAME)"
+    fi
+
     PS1+="$GRAY\u@\h:${PINK}\W"
     PS1+="$GREEN\$(type -t __git_ps1 > /dev/null && __git_ps1 \" (%s)\")"
     PS1+="$BLUE\$(_jobs_running)"

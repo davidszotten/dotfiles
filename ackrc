@@ -6,3 +6,4 @@
 --ignore-dir=versions
 --ignore-dir=migrations
 --ignore-dir=htmlcov
+--ignore-dir=docs/build/html

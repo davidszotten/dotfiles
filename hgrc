@@ -4,6 +4,7 @@ editor = vim
 
 [extensions]
 color =
+shelve =
 
 [alias]
 d = !"$HG" diff -p --color=always $@ | less -R

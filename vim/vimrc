@@ -215,6 +215,15 @@ let g:DeleteTrailingWhitespace_Action = 'delete'
 " reference
 " command W w !sudo tee % > /dev/null
 
+
+" IndentLine
+let g:indentLine_char = "❘"
+let g:indentLine_color_term = 239
+
+" Git gutter
+" (same background as number column)
+highlight clear SignColumn
+
 " always show tab bar
 set showtabline=2
 

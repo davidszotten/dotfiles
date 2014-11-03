@@ -277,46 +277,13 @@ let g:command_t_traverse_to_scm_root = 1
 
 " python
 
-" virtualenvwrapper adds a (gitignored) symlink to site-pacakges
-" in the project root
-
-function! s:FindVirtualenv()
-    return  matchstr(expand('%:p'), '\v' . $PROJECT_HOME . '/\zs([^/]+)\ze')
-endfunction
-
 function! g:FindSitePackages()
-    let l:virtualenv = s:FindVirtualenv()
-    let l:search_path = $WORKON_HOME . '/' . l:virtualenv . '/**'
-    return finddir('site-packages', l:search_path) . '/'
+    let l:py_cmd = 'import distutils; print (distutils.sysconfig.get_python_lib())'
+    let l:virtualenv = system('python -c "' . l:py_cmd . '"')
+    return substitute(l:virtualenv, '\n$', '', '') . '/'
 endfunction
 
 cnoremap <expr> ^^ g:FindSitePackages()
-
-
-function! s:ActivateVirtualenv()
-    let l:virtualenv = s:FindVirtualenv()
-    if l:virtualenv == '.'
-        call virtualenv#deactivate()
-        execute ":SyntasticCheck"
-        return 0
-    elseif exists('g:virtualenv_path') && l:virtualenv ==# g:virtualenv_name
-        return 0
-    else
-        call virtualenv#activate(l:virtualenv)
-        execute ":SyntasticCheck"
-    endif
-endfunction
-
-function! s:EnsureVimVirtualenv()
-    let l:virtualenv = "vim"
-    if exists('g:virtualenv_path') && l:virtualenv ==# g:virtualenv_name
-        return
-    else
-        call virtualenv#activate(l:virtualenv)
-        execute ":SyntasticCheck"
-    endif
-endfunction
-
 
 
 augroup ft_python
@@ -324,9 +291,6 @@ augroup ft_python
     au FileType python nnoremap <leader>p Oimport ipdb; ipdb.set_trace()<ESC>
     au FileType python nnoremap <leader>P oimport ipdb; ipdb.set_trace()<ESC>
 
-    " Too slow
-    " au BufRead,BufEnter *.py :call s:ActivateVirtualenv()
-    au BufRead,BufEnter *.py :call s:EnsureVimVirtualenv()
 augroup END
 
 " Reload the colorscheme whenever we write the file.

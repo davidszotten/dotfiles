@@ -262,10 +262,6 @@ set fillchars+=stl:\ ,stlnc:\
 let g:Powerline_mode_n = ' N '
 
 
-" we don't want to use the virtualenv from the launching shell
-let $VIRTUAL_ENV = 'qq'
-
-
 " make it easier to make it easier to edit text.
 if has("gui_macvim")
     :nnoremap <leader>ev :tabnew $MYVIMRC<cr>

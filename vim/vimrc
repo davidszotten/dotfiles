@@ -288,8 +288,8 @@ cnoremap <expr> ^^ g:FindSitePackages()
 
 augroup ft_python
     au!
-    au FileType python nnoremap <leader>p Oimport ipdb; ipdb.set_trace()<ESC>
-    au FileType python nnoremap <leader>P oimport ipdb; ipdb.set_trace()<ESC>
+    au FileType python nnoremap <leader>p Oimport pdb; pdb.set_trace()<ESC>
+    au FileType python nnoremap <leader>P oimport pdb; pdb.set_trace()<ESC>
 
 augroup END
 

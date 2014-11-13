@@ -58,3 +58,6 @@
 [submodule "vim/bundle/vitality"]
 	path = vim/bundle/vitality
 	url = git@github.com:sjl/vitality.vim.git
+[submodule "vim/bundle/bracketed-paste"]
+	path = vim/bundle/bracketed-paste
+	url = git@github.com:ConradIrwin/vim-bracketed-paste.git

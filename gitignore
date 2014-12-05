@@ -4,3 +4,4 @@
 htmlcov
 site-packages
 chromedriver.log
+.cagoule.db

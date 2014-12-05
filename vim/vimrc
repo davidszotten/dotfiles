@@ -67,6 +67,10 @@ set softtabstop=4
 set tabstop=4
 set expandtab
 
+" share the unnamed register with the system clipboard
+" until it stops breaking regular yanking..
+" set clipboard=unnamedplus
+
 set ruler
 set number
 
@@ -122,6 +126,10 @@ nnoremap <c-o> <c-o>zz
 noremap H ^
 noremap L $
 vnoremap L g_
+
+" swap next an previous for autocomplate
+inoremap <c-p> <c-n>
+inoremap <c-n> <c-p>
 
 
 " backups
@@ -184,7 +192,7 @@ let g:ctrlp_prompt_mappings = {
 if has("unix")
     let g:ctrlp_user_command = {
     \ 'types': {
-        \ 1: ['.git/', 'cd %s && git ls-files']
+        \ 1: ['.git/', 'cd %s && git ls-files . -co --exclude-standard']
         \ },
     \ 'fallback': 'find %s -type f | head -' . g:ctrlp_max_files
     \ }
@@ -197,7 +205,7 @@ endif
 " syntastic
 let g:syntastic_enable_signs=0
 let g:syntastic_check_on_open=1
-let g:syntastic_python_checker = 'pyflakes'
+let g:syntastic_python_checkers = ['pyflakes']
 
 " jedi
 " let g:jedi#completions_enabled = 0
@@ -235,6 +243,8 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 
 " disable automatic folding (for markdown)
 autocmd Filetype mkd setlocal nofoldenable
+
+autocmd BufRead,BufNewFile CHANGES set syntax=markdown
 
 " make tilde an operator (to allow e.g. ~w to change a whole word)
 :set tildeop
@@ -291,6 +301,11 @@ augroup ft_python
     au FileType python nnoremap <leader>p Oimport pdb; pdb.set_trace()<ESC>
     au FileType python nnoremap <leader>P oimport pdb; pdb.set_trace()<ESC>
 
+    " pytest
+    " au FileType python nnoremap <leader>pp :call SendToTmux("ofsplatform test " . expand('%') . "\n")<cr>
+    au FileType python nnoremap <leader>yt :let @+ = "ofsplatform test " . expand('%') . "\n"<cr>
+    " au FileType python nnoremap <leader>yt :let @+ = "ofsplatform test " . expand('%') . "\n"<cr>
+
 augroup END
 
 " Reload the colorscheme whenever we write the file.
@@ -341,4 +356,52 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 " }}}
 
+" CloseEmpty {{{
+
+" Delete all empty buffers
+
+function! BufferIsEmpty()
+    if line('$') == 1 && getline(1) == ''
+        return 1
+    else
+        return 0
+    endif
+endfunction
+
+function! CloseEmpty()
+    let last_buffer = bufnr('$')
+
+    " close all saved buffers
+    let n = 1
+    while n <= last_buffer
+        if buflisted(n) && !getbufvar(n, '&modified')
+            exe 'bdelete' . ' ' . n
+        endif
+        let n = n+1
+    endwhile
+
+    " close all tabs and re-open (to make sure each is in one tab only)
+    tabonly
+    tab ball
+endfunc
+
 " }}}
+
+
+" Open file from e.g. stacktrace line marker {{{
+
+
+function! OpenFromClipboard()
+    let marker = @*
+    let marker_list = split(marker, ":")
+    let filename = marker_list[0]
+    let lineno = marker_list[1]
+    exe 'e ' . filename
+    exe 'normal! ' . lineno . 'G'
+endfunc
+
+" }}}
+
+
+" }}}
+

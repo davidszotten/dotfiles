@@ -29,4 +29,11 @@
         KeyCode::ESCAPE, KeyCode::DOT
     </autogen>
   </item>
+  <!-- <item> -->
+    <!-- <name>Mag Glass</name> -->
+    <!-- <identifier>private.mag_class_to_f5</identifier> -->
+     <!-- <autogen> -->
+         <!-- --KeyToKey-- KeyCode::RawValue::0xff, KeyCode::Q, -->
+    <!-- </autogen> -->
+  <!-- </item> -->
 </root>

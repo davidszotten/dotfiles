@@ -64,3 +64,6 @@
 [submodule "vim/bundle/gitgutter"]
 	path = vim/bundle/gitgutter
 	url = git@github.com:airblade/vim-gitgutter.git
+[submodule "vim/bundle/indentline"]
+	path = vim/bundle/indentline
+	url = git@github.com:Yggdroot/indentLine.git

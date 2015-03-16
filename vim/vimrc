@@ -211,6 +211,7 @@ let g:syntastic_python_checkers = ['pyflakes']
 " jedi
 " let g:jedi#completions_enabled = 0
 let g:jedi#goto_definitions_command = 'gD'
+let g:jedi#goto_assignments_command = 'gA'
 autocmd FileType python setlocal completeopt-=preview
 let g:jedi#show_call_signatures = ""
 

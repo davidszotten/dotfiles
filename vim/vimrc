@@ -408,5 +408,14 @@ endfunc
 " }}}
 
 
+" Format buffer with json data {{{
+
+function! FormatJson()
+    exe '%!python3 -mjson.tool'
+endfunc
+
+" }}}
+
+
 " }}}
 

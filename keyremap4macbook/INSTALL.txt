@@ -1,5 +1,0 @@
-TARGET="/Users/david/Library/Application Support/KeyRemap4MacBook/private.xml"
-
-mv "$TARGET" "$TARGET.bak"
-
-ln -s "$(pwd)/private.xml" "$TARGET"

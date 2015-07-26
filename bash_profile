@@ -101,10 +101,6 @@ function __prompt_command() {
 export PROMPT_COMMAND=__prompt_command
 
 
-# pip download caching
-export PIP_DOWNLOAD_CACHE="$HOME/.pip/cache"
-mkdir -p "$PIP_DOWNLOAD_CACHE"
-
 export PIP_REQUIRE_VIRTUALENV=true
 syspip() {
    PIP_REQUIRE_VIRTUALENV="" pip "$@"

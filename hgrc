@@ -4,6 +4,7 @@ editor = vim
 
 [extensions]
 color =
+progress =
 shelve =
 
 [alias]

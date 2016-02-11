@@ -4,7 +4,5 @@
 --type-set=rst=.rst
 
 --ignore-dir=.tox
---ignore-dir=versions
---ignore-dir=migrations
 --ignore-dir=htmlcov
 --ignore-dir=docs/build/html

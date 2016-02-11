@@ -424,5 +424,12 @@ endfunc
 " }}}
 
 
+" Format buffer with html {{{
+"
+function! FormatHtml()
+    exe '!tidy -mi -xml --indent-spaces 4 -wrap 0 %'
+endfunc
+
 " }}}
 
+" }}}

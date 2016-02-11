@@ -5,3 +5,4 @@ htmlcov
 site-packages
 chromedriver.log
 .cagoule.db
+.DS_Store

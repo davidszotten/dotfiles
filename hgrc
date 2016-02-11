@@ -4,8 +4,12 @@ editor = vim
 
 [extensions]
 color =
+pager =
 progress =
 shelve =
 
 [alias]
 d = !"$HG" diff -p --color=always $@ | less -R
+
+[pager]
+pager = LESS='FRX' less

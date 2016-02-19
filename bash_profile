@@ -56,10 +56,12 @@ PATH=$PATH:$HOME/dotfiles/bin:$HOME/bin:$HOME/.local/bin
 
 
 _jobs_running() {
-    local jobs_running=$(jobs -p| wc -l| tr -d ' ')
-    if [[ "$jobs_running" != "0" ]]
+    local jobs_running=$(jobs -rp| wc -l| tr -d ' ')
+    local jobs_stopped=$(jobs -sp| wc -l| tr -d ' ')
+    local total_jobs=$(($jobs_running + $jobs_stopped))
+    if [[ "$total_jobs" != "0" ]]
     then
-        echo "($jobs_running)"
+        echo "($total_jobs)"
     fi
 }
 

@@ -70,6 +70,8 @@ set softtabstop=4
 set tabstop=4
 set expandtab
 
+set mouse-=a
+
 " share the unnamed register with the system clipboard
 " until it stops breaking regular yanking..
 " set clipboard=unnamedplus

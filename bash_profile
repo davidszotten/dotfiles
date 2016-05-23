@@ -71,8 +71,8 @@ function __prompt_command() {
     PS1=""
 
     # prompt
-    GRAY="\[\033[1;30m\]"
-    PINK="\[\033[0;31m\]"
+    GRAY="\[\033[0;30m\]"
+    PINK="\[\033[0;35m\]"
     GREEN="\[\033[0;32m\]"
     BLUE="\[\033[0;34m\]"
     RESET="\[\033[0m\]"

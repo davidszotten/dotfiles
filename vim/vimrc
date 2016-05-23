@@ -6,8 +6,10 @@ call pathogen#infect()
 
 
 " for some reason, number of term colours aren't set properly
-set t_Co=256
-colorscheme molokai
+" set t_Co=256
+" colorscheme molokai
+set background=dark
+colorscheme solarized
 set guioptions=egmrt
 
 syntax on

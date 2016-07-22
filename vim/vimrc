@@ -436,4 +436,14 @@ endfunc
 
 " }}}
 
+
+" isort python buffer {{{
+
+function! Isort()
+    exe '%!isort -tc %'
+endfunc
+
+" }}}
+
+
 " }}}

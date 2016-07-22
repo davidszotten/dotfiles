@@ -10,6 +10,9 @@
 [color]
     ui = true
 
+[diff]
+    compactionHeuristic = true
+
 [alias]
     co = checkout
     lol = log --pretty=oneline --abbrev-commit --graph --decorate --all

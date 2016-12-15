@@ -52,7 +52,7 @@ then
     fi
 fi
 
-PATH=$PATH:$HOME/dotfiles/bin:$HOME/bin:$HOME/.local/bin
+export PATH=$PATH:$HOME/dotfiles/bin:$HOME/bin:$HOME/.local/bin
 
 
 _jobs_running() {

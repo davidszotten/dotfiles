@@ -296,6 +296,9 @@ endif
 
 let g:command_t_traverse_to_scm_root = 1
 
+
+let g:ackprg = 'ag --vimgrep --smart-case'
+
 " File type specific settings
 
 

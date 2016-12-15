@@ -29,7 +29,7 @@ export GREP_OPTIONS='--color=auto'
 alias ls='ls -G'
 alias clean_pyc='find . -name "*.pyc" -delete'
 alias figlet='figlet -f colossal -m 1'
-alias conflictack='ack "^(<|>|=){7}($| )"'
+alias conflictack='ag "^(<|>|=){7}($| )"'
 
 # git_open_conflicts git ls-files -m|sort -u|xargs mvim
 

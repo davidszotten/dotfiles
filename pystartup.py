@@ -9,9 +9,11 @@ import atexit
 import os
 import readline
 import rlcompleter
+import sys
 
 readline.parse_and_bind('tab: complete')
-historyPath = os.path.expanduser("~/.pyhistory")
+
+historyPath = os.path.expanduser("~/.pyhistory{}".format(sys.version_info.major))
 
 def save_history(historyPath=historyPath):
     import readline
@@ -21,4 +23,4 @@ if os.path.exists(historyPath):
     readline.read_history_file(historyPath)
 
 atexit.register(save_history)
-del os, atexit, readline, rlcompleter, save_history, historyPath
+del os, sys, atexit, readline, rlcompleter, save_history, historyPath

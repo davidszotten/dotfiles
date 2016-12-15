@@ -209,6 +209,8 @@ endif
 " let g:ctrlp_clear_cache_on_exit = 0
 " let g:ctrlp_cache_dir = $HOME . '/.vim/.cache/ctrlp'
 
+" don't highlight background for italics in html files
+:highlight htmlItalic term=NONE cterm=NONE gui=NONE
 
 " syntastic
 let g:syntastic_enable_signs=0

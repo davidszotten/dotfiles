@@ -297,7 +297,11 @@ endif
 let g:command_t_traverse_to_scm_root = 1
 
 
-let g:ackprg = 'ag --vimgrep --smart-case'
+if executable("rg")
+    let g:ackprg = 'rg --vimgrep --no-heading --smart-case'
+else
+    let g:ackprg = 'ag --vimgrep --smart-case'
+endif
 
 " File type specific settings
 

@@ -181,10 +181,12 @@ let g:CommandTAcceptSelectionMap = '<C-t>'
 let g:CommandTAcceptSelectionTabMap = '<cr>'
 
 
-" ctrlp
-nnoremap <leader>t :CtrlP<CR>
-nnoremap <leader>b :CtrlPBuffer<cr>
-nnoremap <leader>m :CtrlPMRU<cr>
+" fzf
+set rtp+=/usr/local/opt/fzf
+
+nnoremap <leader>t :Files<CR>
+nnoremap <leader>b :Buffers<cr>
+nnoremap <leader>m :History<cr>
 
 let g:ctrlp_use_caching = 0
 let g:ctrlp_match_window_reversed = 0

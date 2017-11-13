@@ -187,6 +187,12 @@ nnoremap <leader>m :History<cr>
 " don't highlight background for italics in html files
 :highlight htmlItalic term=NONE cterm=NONE gui=NONE
 
+" rg
+if executable("rg")
+    let g:ackprg = 'rg --vimgrep --no-heading --smart-case'
+endif
+
+
 " syntastic
 let g:syntastic_enable_signs=0
 let g:syntastic_check_on_open=1

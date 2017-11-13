@@ -11,16 +11,24 @@ import readline
 import rlcompleter
 import sys
 
-readline.parse_and_bind('tab: complete')
+if 'libedit' in readline.__doc__:
+    readline.parse_and_bind("bind ^I rl_complete")
+else:
+    readline.parse_and_bind("tab: complete")
 
-historyPath = os.path.expanduser("~/.pyhistory{}".format(sys.version_info.major))
+historyPath = os.path.expanduser(
+    "~/.pyhistory{}".format(sys.version_info.major)
+)
 
 def save_history(historyPath=historyPath):
     import readline
     readline.write_history_file(historyPath)
 
 if os.path.exists(historyPath):
-    readline.read_history_file(historyPath)
+    try:
+        readline.read_history_file(historyPath)
+    except OSError as exc:
+        print('Failed to read history file ({}): {}'.format(historyPath, exc))
 
 atexit.register(save_history)
 del os, sys, atexit, readline, rlcompleter, save_history, historyPath

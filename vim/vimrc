@@ -134,10 +134,6 @@ noremap H ^
 noremap L $
 vnoremap L g_
 
-" swap next an previous for autocomplate
-inoremap <c-p> <c-n>
-inoremap <c-n> <c-p>
-
 
 " backups
 

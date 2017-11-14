@@ -31,5 +31,6 @@ create_link "dotfiles/tmux/tmux.conf"   ".tmux.conf"
 create_link "dotfiles/vim/"             ".vim"
 create_link "dotfiles/vim/vimrc"        ".vimrc"
 create_link "dotfiles/vim/gvimrc"       ".gvimrc"
+create_link "dotfiles/karabiner"        ".config/karabiner"
 
 popd >/dev/null

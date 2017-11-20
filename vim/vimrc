@@ -44,11 +44,8 @@ command! PackUpdate packadd minpac | source $MYVIMRC | call minpac#update()
 command! PackClean  packadd minpac | source $MYVIMRC | call minpac#clean()
 
 
-" for some reason, number of term colours aren't set properly
-" set t_Co=256
-" colorscheme molokai
 set background=dark
-colorscheme solarized
+silent! colorscheme solarized
 set guioptions=egmrt
 
 syntax on

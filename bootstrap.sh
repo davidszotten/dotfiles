@@ -1,6 +1,9 @@
 #!/bin/bash
 
-test -d ~/dotfiles || git clone --recursive https://github.com/davidszotten/dotfiles ~/dotfiles
+test -d ~/dotfiles || git clone https://github.com/davidszotten/dotfiles ~/dotfiles
+
+mkdir -p ~/dotfiles/vim/pack/minpac/opt/
+test -d ~/dotfiles/vim/pack/minpac/opt/minpac/ || git clone https://github.com/k-takata/minpac.git ~/dotfiles/vim/pack/minpac/opt/minpac
 
 pushd ~/dotfiles >/dev/null
 

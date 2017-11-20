@@ -4,3 +4,4 @@ tmp
 yankring_history_v2.txt
 .netrwhist
 vim/**/docs/tags
+vim/pack/**

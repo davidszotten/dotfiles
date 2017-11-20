@@ -212,7 +212,7 @@ set rtp+=/usr/local/opt/fzf
 
 nnoremap <leader>t :Files<CR>
 nnoremap <leader>b :Buffers<cr>
-nnoremap <leader>m :History<cr>
+nnoremap <leader>m :FZFMru<cr>
 
 " don't highlight background for italics in html files
 :highlight htmlItalic term=NONE cterm=NONE gui=NONE

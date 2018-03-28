@@ -19,6 +19,7 @@ if exists('*minpac#init')
     call minpac#add('janko-m/vim-test')
     call minpac#add('jmcantrell/vim-virtualenv')
     call minpac#add('junegunn/fzf.vim')
+    call minpac#add('maxbrunsfeld/vim-yankstack')
     call minpac#add('mileszs/ack.vim')
     call minpac#add('pbogut/fzf-mru.vim')
     call minpac#add('plasticboy/vim-markdown')
@@ -198,9 +199,9 @@ set virtualedit=block
 " scratch plugin
 nnoremap <leader>s :Scratch <cr>
 
-" yankring plugin
-let g:yankring_history_dir =  expand('$HOME') . '/.vim'
-let g:yankring_paste_using_g = 0
+" yankstack plugin
+nmap <c-p> <Plug>yankstack_substitute_older_paste
+nmap <c-n> <Plug>yankstack_substitute_newer_paste
 
 " space around/after comments
 let NERDSpaceDelims=1

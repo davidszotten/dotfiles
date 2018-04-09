@@ -464,6 +464,11 @@ endfunc
 
 function! Isort()
     exe '%!isort -tc %'
+
+" copy filename/path to clipboard {{{
+
+function! CopyFilename()
+    let @*=expand("%")
 endfunc
 
 " }}}

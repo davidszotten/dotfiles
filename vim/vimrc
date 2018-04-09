@@ -47,6 +47,8 @@ command! PackClean  packadd minpac | source $MYVIMRC | call minpac#clean()
 
 set background=dark
 silent! colorscheme solarized
+" highlight with underline instead to not loose track of the cursor
+:hi! Search ctermbg=NONE ctermfg=NONE cterm=undercurl
 set guioptions=egmrt
 
 syntax on

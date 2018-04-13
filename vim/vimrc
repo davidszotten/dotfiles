@@ -464,6 +464,7 @@ endfunc
 
 function! Isort()
     exe '%!isort -tc %'
+endfunc
 
 " copy filename/path to clipboard {{{
 

@@ -283,6 +283,8 @@ autocmd BufRead,BufNewFile CHANGES set syntax=markdown
 
 " select last paste
 nnoremap gp `[v`]
+" the above conflicts with yankring
+nnoremap vap `[v`]
 
 " Don't clobber the unnamed register when pasting over text in visual mode.
 vnoremap p pgvy

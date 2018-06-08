@@ -54,6 +54,10 @@ set guioptions=egmrt
 syntax on
 set synmaxcol=200  " default was 3000
 
+" allow per-project vimrc
+set exrc
+set secure  " make them slightly more secure
+
 " skip the splash screen
 set shortmess+=I
 

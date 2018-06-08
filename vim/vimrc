@@ -9,6 +9,7 @@ if exists('*minpac#init')
 
     call minpac#add('alfredodeza/pytest.vim')
     call minpac#add('altercation/vim-colors-solarized')
+    call minpac#add('ambv/black')
     call minpac#add('ConradIrwin/vim-bracketed-paste')
     call minpac#add('Lokaltog/vim-powerline')
     call minpac#add('Yggdroot/indentLine')
@@ -358,6 +359,8 @@ augroup color_molokai_dev
     au!
     au BufWritePost molokai.vim color molokai
 augroup END
+
+let g:black_virtualenv = glob("$HOME/environments/black/")
 
 
 " Mini-plugins ------------------------------------------------------------ {{{

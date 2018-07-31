@@ -341,11 +341,12 @@ endfunction
 
 cnoremap <expr> ^^ g:FindSitePackages()
 
+let s:debug_statement = system('python -c "import sys; print(\"breakpoint()\" if sys.version_info >= (3, 7) else \"import pdb; pdb.set_trace()\")"')[:-2]
 
 augroup ft_python
     au!
-    au FileType python nnoremap <leader>p Oimport pdb; pdb.set_trace()<ESC>
-    au FileType python nnoremap <leader>P oimport pdb; pdb.set_trace()<ESC>
+    exec "au FileType python nnoremap <leader>p O" . s:debug_statement . "<ESC>"
+    exec "au FileType python nnoremap <leader>P o" . s:debug_statement . "<ESC>"
 
     " pytest
     " au FileType python nnoremap <leader>pp :call SendToTmux("ofsplatform test " . expand('%') . "\n")<cr>

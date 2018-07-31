@@ -347,12 +347,6 @@ augroup ft_python
     au!
     exec "au FileType python nnoremap <leader>p O" . s:debug_statement . "<ESC>"
     exec "au FileType python nnoremap <leader>P o" . s:debug_statement . "<ESC>"
-
-    " pytest
-    " au FileType python nnoremap <leader>pp :call SendToTmux("ofsplatform test " . expand('%') . "\n")<cr>
-    au FileType python nnoremap <leader>yt :let @+ = "ofsplatform test " . expand('%') . "\n"<cr>
-    " au FileType python nnoremap <leader>yt :let @+ = "ofsplatform test " . expand('%') . "\n"<cr>
-
 augroup END
 
 " Reload the colorscheme whenever we write the file.

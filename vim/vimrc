@@ -18,7 +18,7 @@ if exists('*minpac#init')
     call minpac#add('davidszotten/vim-trailing-whitespace')
     call minpac#add('isRuslan/vim-es6')
     call minpac#add('janko-m/vim-test')
-    call minpac#add('jmcantrell/vim-virtualenv')
+    " call minpac#add('jmcantrell/vim-virtualenv')
     call minpac#add('junegunn/fzf.vim')
     call minpac#add('maxbrunsfeld/vim-yankstack')
     call minpac#add('mileszs/ack.vim')
@@ -39,7 +39,7 @@ if exists('*minpac#init')
     call minpac#add('vim-scripts/CmdlineComplete')
     call minpac#add('vim-scripts/DeleteTrailingWhitespace')
     call minpac#add('vim-scripts/ShowTrailingWhitespace')
-    call minpac#add('vim-scripts/YankRing.vim')
+    " call minpac#add('vim-scripts/YankRing.vim')
 endif
 
 command! PackUpdate packadd minpac | source $MYVIMRC | call minpac#update()
@@ -226,11 +226,6 @@ nnoremap <leader>m :FZFMru<cr>
 " don't highlight background for italics in html files
 :highlight htmlItalic term=NONE cterm=NONE gui=NONE
 
-" rg
-if executable("rg")
-    let g:ackprg = 'rg --vimgrep --no-heading --smart-case'
-endif
-
 
 " syntastic
 let g:syntastic_enable_signs=0
@@ -341,10 +336,10 @@ endfunction
 
 cnoremap <expr> ^^ g:FindSitePackages()
 
-let s:debug_statement = system('python -c "import sys; print(\"breakpoint()\" if sys.version_info >= (3, 7) else \"import pdb; pdb.set_trace()\")"')[:-2]
-
 augroup ft_python
     au!
+    let s:debug_statement = system('python -c "import sys; print(\"breakpoint()\" if sys.version_info >= (3, 7) else \"import pdb; pdb.set_trace()\")"')[:-2]
+
     exec "au FileType python nnoremap <leader>p O" . s:debug_statement . "<ESC>"
     exec "au FileType python nnoremap <leader>P o" . s:debug_statement . "<ESC>"
 augroup END
@@ -355,7 +350,9 @@ augroup color_molokai_dev
     au BufWritePost molokai.vim color molokai
 augroup END
 
-let g:black_virtualenv = glob("$HOME/environments/black/")
+if executable(glob("$HOME/environments/black/bin/black"))
+    let g:black_virtualenv = glob("$HOME/environments/black/")
+endif
 
 
 " Mini-plugins ------------------------------------------------------------ {{{

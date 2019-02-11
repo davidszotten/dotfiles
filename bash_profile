@@ -33,6 +33,7 @@ alias ls='ls -G'
 alias clean_pyc='find . -name "*.pyc" -delete'
 alias figlet='figlet -f colossal -m 1'
 alias conflictack='rg "^(<|>|=){7}($| )"'
+alias watch='watch '
 
 # git_open_conflicts git ls-files -m|sort -u|xargs mvim
 

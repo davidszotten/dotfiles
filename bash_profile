@@ -16,7 +16,13 @@ shopt -s histappend
 stty stop 'undef'
 
 # C-x C-e drops into $EDITOR to edit the current command before executing
-export EDITOR=vim
+if [[ $(which nvim) ]]
+then
+    export EDITOR=nvim
+    alias vim=nvim
+else
+    export EDITOR=vim
+fi
 
 # for python readline support
 export PYTHONSTARTUP=~/.pystartup.py

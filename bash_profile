@@ -30,7 +30,7 @@ export PYTHONSTARTUP=~/.pystartup.py
 export GREP_OPTIONS='--color=auto'
 
 # export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 
 
 ### aliases

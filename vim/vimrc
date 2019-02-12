@@ -1,49 +1,52 @@
 set encoding=utf-8
 let mapleader = ","
 
+call plug#begin('~/.vim/plugged')
 
-if exists('*minpac#init')
-    " minpac is loaded.
-    call minpac#init()
-    call minpac#add('k-takata/minpac', {'type': 'opt'})
+    " Plug 'alfredodeza/pytest.vim')
+    Plug 'altercation/vim-colors-solarized'
+    Plug 'ambv/black'
+    Plug 'ConradIrwin/vim-bracketed-paste'
+    " Plug 'Lokaltog/vim-powerline'
+    Plug 'itchyny/lightline.vim'
+    "
+    Plug 'Yggdroot/indentLine'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'davidhalter/jedi-vim'
+    Plug 'davidszotten/vim-trailing-whitespace'
+    Plug 'glench/vim-jinja2-syntax'
+    Plug 'isRuslan/vim-es6'
+    Plug 'janko-m/vim-test'
+    " Plug 'jmcantrell/vim-virtualenv'
+    Plug 'junegunn/fzf.vim'
+    Plug 'maxbrunsfeld/vim-yankstack'
+    Plug 'mileszs/ack.vim'
+    Plug 'maximbaz/lightline-ale'
+    Plug 'pbogut/fzf-mru.vim'
+    Plug 'plasticboy/vim-markdown'
+    Plug 'racer-rust/vim-racer'
+    Plug 'rust-lang/rust.vim'
+    Plug 'scrooloose/nerdcommenter'
+    " Plug 'scrooloose/syntastic'
+    Plug 'sjl/gundo.vim'
+    Plug 'sjl/vitality.vim'
+    Plug 'tpope/vim-eunuch'
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-repeat'
+    Plug 'tpope/vim-rhubarb'
+    Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-unimpaired'
+    Plug 'vim-scripts/CmdlineComplete'
+    Plug 'vim-scripts/DeleteTrailingWhitespace'
+    Plug 'vim-scripts/ShowTrailingWhitespace'
+    " local
+    " Plug 'neomake/neomake'
+    Plug 'w0rp/ale'
+    " Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
+    Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 
-    call minpac#add('alfredodeza/pytest.vim')
-    call minpac#add('altercation/vim-colors-solarized')
-    call minpac#add('ambv/black')
-    call minpac#add('ConradIrwin/vim-bracketed-paste')
-    call minpac#add('Lokaltog/vim-powerline')
-    call minpac#add('Yggdroot/indentLine')
-    call minpac#add('airblade/vim-gitgutter')
-    call minpac#add('davidhalter/jedi-vim')
-    call minpac#add('davidszotten/vim-trailing-whitespace')
-    call minpac#add('isRuslan/vim-es6')
-    call minpac#add('janko-m/vim-test')
-    " call minpac#add('jmcantrell/vim-virtualenv')
-    call minpac#add('junegunn/fzf.vim')
-    call minpac#add('maxbrunsfeld/vim-yankstack')
-    call minpac#add('mileszs/ack.vim')
-    call minpac#add('pbogut/fzf-mru.vim')
-    call minpac#add('plasticboy/vim-markdown')
-    call minpac#add('racer-rust/vim-racer')
-    call minpac#add('rust-lang/rust.vim')
-    call minpac#add('scrooloose/nerdcommenter')
-    call minpac#add('scrooloose/syntastic')
-    call minpac#add('sjl/gundo.vim')
-    call minpac#add('sjl/vitality.vim')
-    call minpac#add('tpope/vim-eunuch')
-    call minpac#add('tpope/vim-fugitive')
-    call minpac#add('tpope/vim-repeat')
-    call minpac#add('tpope/vim-rhubarb')
-    call minpac#add('tpope/vim-surround')
-    call minpac#add('tpope/vim-unimpaired')
-    call minpac#add('vim-scripts/CmdlineComplete')
-    call minpac#add('vim-scripts/DeleteTrailingWhitespace')
-    call minpac#add('vim-scripts/ShowTrailingWhitespace')
-    " call minpac#add('vim-scripts/YankRing.vim')
-endif
-
-command! PackUpdate packadd minpac | source $MYVIMRC | call minpac#update()
-command! PackClean  packadd minpac | source $MYVIMRC | call minpac#clean()
+" Initialize plugin system
+call plug#end()
 
 
 set background=dark

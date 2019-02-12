@@ -209,6 +209,47 @@ set virtualedit=block
 
 " plugin settings
 
+let g:lightline = {
+      \ 'colorscheme': 'powerline',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename' ] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'filetype' ],
+      \              [ 'cocstatus', 'linter_errors', 'linter_warnings' ]]
+      \ },
+      \ 'component_function': {
+      \   'fileformat': 'LightlineFileformat',
+      \   'filename': 'LightlineFilename',
+      \   'filetype': 'LightlineFiletype',
+      \ },
+      \ 'component_expand': {
+      \  'cocstatus': 'coc#status',
+      \  'linter_warnings': 'lightline#ale#warnings',
+      \  'linter_errors': 'lightline#ale#errors',
+      \  'linter_ok': 'lightline#ale#ok',
+      \ },
+      \ }
+
+function! LightlineFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! LightlineFiletype()
+  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+endfunction
+
+function! LightlineFilename()
+  let filename = expand('%') !=# '' ? expand('%') : '[No Name]'
+  let modified = &modified ? ' +' : ''
+  return filename . modified
+endfunction
+
+let g:lightline#ale#indicator_warnings='⚠'
+let g:lightline#ale#indicator_errors = '✗'
+
+
 " scratch plugin
 nnoremap <leader>s :Scratch <cr>
 

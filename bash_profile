@@ -8,9 +8,11 @@ export IGNOREEOF=2
 # Erase duplicates
 export HISTCONTROL=erasedups
 # resize history size
-export HISTSIZE=5000
+export HISTFILESIZE=1000000
+export HISTSIZE=1000000
 # append to bash_history if Terminal.app quits
 shopt -s histappend
+export HISTIGNORE='ls:bg:fg:history'
 
 # i never freeze my terminal, but i would like forward search
 stty stop 'undef'
@@ -78,6 +80,9 @@ _jobs_running() {
 
 function __prompt_command() {
     local EXIT="$?"             # This needs to be first
+
+    # write bash history immediately
+    history -a
     PS1=""
 
     # prompt

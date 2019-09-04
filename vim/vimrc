@@ -62,7 +62,7 @@ set synmaxcol=200  " default was 3000
 set exrc
 set secure  " make them slightly more secure
 
-" don't hide stuff in e.g. markdown or json docs
+" stop syntax highlighting hiding characters in e.g. markdown or json docs
 set conceallevel=0
 
 " skip the splash screen

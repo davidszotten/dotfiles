@@ -516,9 +516,18 @@ endfunc
 
 " copy filename/path to clipboard {{{
 
-function! CopyFilename()
-    let @*=expand("%")
+function! CopyFilename(...)
+    " get(a:, n, default)
+    let with_lines = get(a:, 0, 0)
+    if with_lines
+        let @*=(expand("%") . ":" . line("'<"))
+    else
+        let @*=expand("%")
+    endif
 endfunc
+
+nnoremap <silent> <leader>cf :call CopyFilename()<CR>
+vnoremap <silent> <leader>cf :call CopyFilename(1)<CR>
 
 " }}}
 

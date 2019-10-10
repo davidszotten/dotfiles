@@ -11,7 +11,8 @@
     ui = true
 
 [diff]
-    compactionHeuristic = true
+    indentHeuristic = true
+    noprefix = true
 
 [alias]
     co = checkout

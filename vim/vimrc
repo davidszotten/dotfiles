@@ -50,6 +50,7 @@ call plug#end()
 
 
 set background=dark
+let g:solarized_termtrans = 1 " This gets rid of the grey background
 silent! colorscheme solarized
 " highlight with underline instead to not loose track of the cursor
 :hi! Search ctermbg=NONE ctermfg=NONE cterm=undercurl

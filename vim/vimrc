@@ -18,6 +18,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'isRuslan/vim-es6'
     Plug 'janko-m/vim-test'
     " Plug 'jmcantrell/vim-virtualenv'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'maxbrunsfeld/vim-yankstack'
     Plug 'mileszs/ack.vim'

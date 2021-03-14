@@ -5,7 +5,7 @@ call plug#begin('~/.vim/plugged')
 
     " Plug 'alfredodeza/pytest.vim')
     Plug 'altercation/vim-colors-solarized'
-    Plug 'ambv/black'
+    Plug 'psf/black'
     Plug 'ConradIrwin/vim-bracketed-paste'
     " Plug 'Lokaltog/vim-powerline'
     Plug 'itchyny/lightline.vim'

@@ -23,6 +23,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'maxbrunsfeld/vim-yankstack'
     Plug 'mileszs/ack.vim'
     Plug 'maximbaz/lightline-ale'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'pbogut/fzf-mru.vim'
     Plug 'plasticboy/vim-markdown'
     Plug 'racer-rust/vim-racer'
@@ -48,6 +49,20 @@ call plug#begin('~/.vim/plugged')
 
 " Initialize plugin system
 call plug#end()
+
+
+if has('nvim-0.5')
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained",
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+  },
+}
+EOF
+
+endif
+
 
 
 set background=dark

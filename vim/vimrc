@@ -23,7 +23,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'maxbrunsfeld/vim-yankstack'
     Plug 'mileszs/ack.vim'
     Plug 'maximbaz/lightline-ale'
+    Plug 'maxmellon/vim-jsx-pretty'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'peitalin/vim-jsx-typescript'
     Plug 'pbogut/fzf-mru.vim'
     Plug 'plasticboy/vim-markdown'
     Plug 'racer-rust/vim-racer'

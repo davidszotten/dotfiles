@@ -28,8 +28,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'peitalin/vim-jsx-typescript'
     Plug 'pbogut/fzf-mru.vim'
     Plug 'plasticboy/vim-markdown'
-    Plug 'racer-rust/vim-racer'
-    Plug 'rust-lang/rust.vim'
     Plug 'scrooloose/nerdcommenter'
     " Plug 'scrooloose/syntastic'
     Plug 'sjl/gundo.vim'

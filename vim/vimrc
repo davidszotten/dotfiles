@@ -39,7 +39,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-rhubarb'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-unimpaired'
-    Plug 'vim-scripts/CmdlineComplete'
+    Plug 'davidszotten/CmdlineComplete', { 'branch': 'py3-tmpfix' }
     Plug 'vim-scripts/DeleteTrailingWhitespace'
     Plug 'vim-scripts/ShowTrailingWhitespace'
     " local

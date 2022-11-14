@@ -1,0 +1,34 @@
+{
+    "title": "Safari new tab next to current",
+    "rules": [
+        {
+            "description": "Open new tabs next to the current one",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "t",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "shell_command": "osascript -e 'tell application \"Safari\"' -e 'tell front window' -e 'set _old_tab to current tab' -e 'set _new_tab to make new tab at after _old_tab' -e 'set current tab to _new_tab' -e 'end tell' -e 'end tell'"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com.apple.Safari"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

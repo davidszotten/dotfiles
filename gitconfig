@@ -23,7 +23,7 @@
     latest = rev-parse HEAD
     ; latest-tag = describe --abbrev=0 origin/master
     latest-tag = !git tag |grep -E '^v[0-9]+$' |cut -c 2-| sort -n |tail -n 1
-    recent-branches = !git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short):%(committerdate:relative)' |column -t -s ':'
+    recent-branches2 = !git for-each-ref --sort=committerdate refs/heads/ --format='%(color:blue)%(refname:short):%(color:yellow)%(committerdate:relative)%(color:reset)' --color=always |column -t -s ':'
     merge-upstream = merge @{u}
     vim-conflict = !git ls-files -m |sort -u |xargs mvim
 
